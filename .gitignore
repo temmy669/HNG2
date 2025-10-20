@@ -1,7 +1,11 @@
-# Byte-compiled / optimized / DLL files
+# Ignore Python bytecode files
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
+*.pyo
+*.pyd
+*__pycache__/
+C:\Users\USER\Documents\Projects\Aiico\call-over\call_over_backend\utils\mail_service\__pycache__
+
 
 # C extensions
 *.so
@@ -127,6 +131,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#pycache
+
 
 # IDE
 .vscode/
