@@ -13,13 +13,13 @@ A RESTful API service built with Django and Django REST Framework that analyzes 
 ## API Endpoints
 
 ### 1. Create/Analyze String
-- **POST** `/api/strings/`
+- **POST** `/api/strings`
 - Request Body: `{"value": "string to analyze"}`
 - Success: 201 Created with full string data
 - Errors: 400 (missing value), 409 (duplicate), 422 (invalid type)
 
 ### 2. Get Specific String
-- **GET** `/api/strings/{string_value}/`
+- **GET** `/api/strings/{string_value}`
 - Success: 200 OK with string data
 - Error: 404 Not Found
 
@@ -36,7 +36,7 @@ A RESTful API service built with Django and Django REST Framework that analyzes 
 - Errors: 400 (missing query), 422 (conflicting filters)
 
 ### 5. Delete String
-- **DELETE** `/api/strings/{string_value}/`
+- **DELETE** `/api/strings/{string_value}`
 - Success: 204 No Content
 - Error: 404 Not Found
 
@@ -67,13 +67,13 @@ Use tools like Postman or curl to test the endpoints. Example:
 
 ```bash
 # Create a string
-curl -X POST http://127.0.0.1:8000/api/strings/ -H "Content-Type: application/json" -d '{"value": "hello world"}'
+curl -X POST http://127.0.0.1:8000/api/strings -H "Content-Type: application/json" -d '{"value": "hello world"}'
 
 # Get all strings
-curl http://127.0.0.1:8000/api/strings/
+curl http://127.0.0.1:8000/api/strings
 
 # Get specific string
-curl http://127.0.0.1:8000/api/strings/hello%20world/
+curl http://127.0.0.1:8000/api/strings/hello%20world
 
 # Filter strings
 curl "http://127.0.0.1:8000/api/strings/?is_palindrome=false"
@@ -82,7 +82,7 @@ curl "http://127.0.0.1:8000/api/strings/?is_palindrome=false"
 curl "http://127.0.0.1:8000/api/strings/filter-by-natural-language?query=all%20single%20word%20palindromic%20strings"
 
 # Delete string
-curl -X DELETE http://127.0.0.1:8000/api/strings/hello%20world/
+curl -X DELETE http://127.0.0.1:8000/api/strings/hello%20world
 ```
 
 ## Notes
